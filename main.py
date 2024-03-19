@@ -22,29 +22,31 @@ def main():
   print("Select one from below =>")
   print("1) Check if it's a prime number.")
   print("2) Auto find prime numbers.")
+
   sel = input()
   if sel != "1" and sel != "2":
     print("Invalid selection. Type either 1 or 2")
+
   if sel == "1":
     print("Provide your number")
     num = input()
+
     try:
       num = int(num)
     except:
-      num = False
-    if num == False:
       print("Excepted only numbers.")
+      return
+
+    res = isPrime(num)
+    if res:
+      print(num, "is a prime number")
     else:
-      res = isPrime(num)
-      if res:
-        print(num, "is a prime number")
-      else:
-        print(num, "isn't a prime number")
-      ext = input("Press anykey and Enter to exit\n")
-      if ext or not ext:
-        return False
-  if sel == "2":
+      print(num, "isn't a prime number")
+
+  elif sel == "2":
     autoFind()
+
+  input("Press anykey and Enter to exit\n")
 
 
 main()
