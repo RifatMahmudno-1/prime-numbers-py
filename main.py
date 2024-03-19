@@ -1,6 +1,5 @@
 from asyncio.windows_events import INFINITE
 import math
-from pickle import FALSE
 
 
 def isPrime(num):
@@ -43,7 +42,7 @@ def main():
         print(num, "isn't a prime number")
       ext = input("Press anykey and Enter to exit\n")
       if ext or not ext:
-        return FALSE
+        return False
   if sel == "2":
     autoFind()
 
